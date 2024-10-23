@@ -8,6 +8,7 @@ import Rubik from '@/assets/rubik.png';
 import User from '@/assets/user.png';
 import Album from '@/assets/album.png';
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Aside() {
     return(
@@ -22,7 +23,9 @@ export default function Aside() {
                     <div className="w-[350px] bg-[#7A6EFF] shadow-2xl p-4 flex flex-col justify-center items-center gap-3 rounded-lg">
                         <p className="font-bold text-white mt-7">Olá Lorem ipsum</p>
                         <div className="flex items-center gap-5">
-                            <Button variant={'verde'} className="rounded-full">+ Novo Jogo</Button>
+                            <Link href={'/perfil/newgame'}>
+                                <Button variant={'verde'} className="rounded-full">+ Novo Jogo</Button>
+                            </Link>
                             <div className="rounded-full bg-[#FFFFFF7D] shadow-2xl p-2 flex items-center justify-center gap-1">
                                 <Coin />
                                 <p>000</p>

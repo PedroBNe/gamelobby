@@ -18,7 +18,9 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        verde: "bg-[#84EF00] shadow-2xl text-black font-semibold hover:bg-opacity-90",
+        verde: "bg-[#84EF00] shadow-2xl text-black font-semibold hover:bg-opacity-70",
+        roxo: "bg-[#7A6EFF] shadow-2xl text-black font-semibold hover:bg-opacity-70",
+        disabled: "bg-[#969696] shadow-2xl text-black font-semibold hover:bg-opacity-70",
         nada: "bg-transparent text-white font-semibold hover:text-opacity-90",
       },
       size: {
