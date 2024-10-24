@@ -26,7 +26,7 @@ const templates = [
     {
         "nome": "LOREM IPSUM",
         "disabled": true,
-        "link": "/perfil/newgame/edit"
+        "link": "/perfil/newgame"
     },
 ] // mock Templates
 

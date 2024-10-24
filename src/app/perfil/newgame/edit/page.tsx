@@ -250,7 +250,7 @@ export default function FormPage() {
                 <Link href="/perfil/newgame">
                     <Button variant={'roxo'} className="rounded-full" size={"lg"}>VOLTAR</Button>
                 </Link>
-                <Link href="/perfil/newgame/edit/config">
+                <Link href="/perfil/newgame/config">
                     <Button variant={'verde'} className="rounded-full" size={"lg"}>AVANÇAR</Button>
                 </Link>
             </div>

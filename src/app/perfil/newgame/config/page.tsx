@@ -258,7 +258,7 @@ export default function Page() {
                 <Link href="/perfil/newgame/edit">
                     <Button variant={'roxo'} className="rounded-full" size={"lg"}>VOLTAR</Button>
                 </Link>
-                <Link href="/perfil/newgame/edit/design">
+                <Link href="/perfil/newgame/design">
                     <Button variant={'verde'} className="rounded-full" size={"lg"}>AVANÇAR</Button>
                 </Link>
             </div>

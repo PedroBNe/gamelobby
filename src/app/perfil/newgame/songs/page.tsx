@@ -1,12 +1,9 @@
-'use client'
-
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+import Archive from "@/utils/Archive";
 import Link from "next/link";
 
 export default function Page() {
-    const Alert = () => {
-        window.alert('Jogo criado com sucesso!')
-    }
 
     return(
         <div className="w-full h-full flex flex-col justify-between items-center">
@@ -38,13 +35,13 @@ export default function Page() {
                             </p>
                             <p className="absolute top-[110px]">DESIGN</p>
                         </li>
-                        <li className="w-[100px] h-[100px] bg-[#84EF00] rounded-full flex items-center justify-center relative z-10">
+                        <li className="w-[100px] h-[100px] bg-[#7F1DFF] rounded-full flex items-center justify-center relative z-10">
                             <p className="text-white font-bold text-5xl">
                                 5
                             </p>
                             <p className="absolute top-[110px]">SONS</p>
                         </li>
-                        <li className="w-[100px] h-[100px] bg-[#7F1DFF] rounded-full flex items-center justify-center relative z-10">
+                        <li className="w-[100px] h-[100px] bg-[#D9D9D9] rounded-full flex items-center justify-center relative z-10">
                             <p className="text-white font-bold text-5xl">
                                 6
                             </p>
@@ -55,27 +52,50 @@ export default function Page() {
                 </div>
             </div>
             <div className="w-full p-10 flex gap-10">
-                <div className="w-[20vw] h-[60vh] flex justify-center items-center bg-slate-300">
+               <div className="w-[20vw] h-[60vh] flex justify-center items-center bg-slate-300">
                     Imagem
-                </div>
-                <div className="flex flex-col gap-10">
-                    <h2 className="w-[80%] text-3xl">Teste seu game e garanta que tudo esteja
-                    exatamente como você imaginou!</h2>
-                    <div className="w-full flex flex-col gap-5 text-start">
-                        <p>
-                            Publique seu game e dê a oportunidade para
-                            o mundo se divertir com ele!
-                        </p>
-                        <Button variant={'verde'} className="w-[10vw] h-[5vh]">PUBLICAR!</Button>
-                    </div>
-                </div>
+               </div>
+               <div>
+                    <ul className="list-decimal text-sm flex flex-col gap-5">
+                        <li>
+                            <div className="flex flex-col gap-2">
+                                <div>
+                                    <h2>Som de vitória (.MP4)</h2>
+                                    <p className="text-sm opacity-40">Som usado quando o jogador vence a partida.</p>
+                                    <div className="w-[15vw]">
+                                        <Archive /> 
+                                    </div>
+                                    <div className="flex gap-1 items-center">
+                                        <Checkbox />
+                                        Usar som padrão
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="flex flex-col gap-2">
+                                <div>
+                                    <h2>Som de derrota (.MP4)</h2>
+                                    <p className="text-sm opacity-40">Som usado quando o jogador perde a partida.</p>
+                                    <div className="w-[15vw]">
+                                        <Archive /> 
+                                    </div>
+                                    <div className="flex gap-1 items-center">
+                                        <Checkbox />
+                                        Usar som padrão
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+               </div>
             </div>
             <div className="w-full p-16 flex justify-between">
-                <Link href="/perfil/newgame/edit/songs">
+                <Link href="/perfil/newgame/design">
                     <Button variant={'roxo'} className="rounded-full" size={"lg"}>VOLTAR</Button>
                 </Link>
-                <Link href="/perfil">
-                    <Button variant={'verde'} className="rounded-full" size={"lg"} onClick={() => Alert()}>SALVAR</Button>
+                <Link href="/perfil/newgame/test">
+                    <Button variant={'verde'} className="rounded-full" size={"lg"}>AVANÇAR</Button>
                 </Link>
             </div>
         </div>
