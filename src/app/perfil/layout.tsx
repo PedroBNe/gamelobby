@@ -1,4 +1,5 @@
 import Aside from "@/components/common/Aside";
+import "./perfil.css";
 
 export default function RootLayout({
   children,
