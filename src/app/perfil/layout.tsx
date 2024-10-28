@@ -9,9 +9,9 @@ export default function RootLayout({
   return (
     <div className="flex bg-white rounded-tl-[200px] rounded-br-[80px] overflow-x-hidden">
       <Aside />
-      <div className="w-full">
+      <main className="w-full">
         {children}
-      </div>
+      </main>
     </div>
   );
 }

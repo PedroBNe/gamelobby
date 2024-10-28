@@ -60,6 +60,17 @@ export default function Page() {
                         <li>
                             <div className="flex flex-col gap-2">
                                 <div>
+                                    <h2>Envio do Ícone (.PNG)</h2>
+                                    <p className="text-sm opacity-40">lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
+                                    <div className="w-[15vw]">
+                                        <Archive /> 
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="flex flex-col gap-2">
+                                <div>
                                     <h2>Envio da logomarca (.PNG)</h2>
                                     <p className="text-sm opacity-40">A logomarca será exibida no verso das cartas, no verso das imagens selecionadas previamente.</p>
                                     <div className="w-[15vw]">
@@ -72,30 +83,49 @@ export default function Page() {
                </div>
             </div>
             <div className="w-full p-10 flex flex-col gap-10">
-            <ul className="text-sm grid grid-cols-2 gap-5">
-                <li>
-                    2. Cor do background
-                    <ColorTable />
-                </li>
-                <li>
-                    3. Cor primária
-                    <ColorTable /> 
-                </li> 
-                <li>
-                    4. Cor secundária
-                    <ColorTable /> 
-                </li> 
-                <li>
-                    5. Cor da fonte
-                    <ColorTable /> 
-                </li> 
-            </ul>
+                <div className="flex flex-col gap-2">
+                    <div>
+                        <h2>3. Envio do Background (.PNG)</h2>
+                        <p className="text-sm opacity-40">A imagem de background será exibida ao fundo do jogo.</p>
+                        <div className="w-[15vw]">
+                            <Archive /> 
+                        </div>
+                    </div>
+                </div>
+                <div className="w-full p-10 flex flex-col gap-10">
+                    <div>
+                        <h2>4. Upload de Imagens</h2>
+                        <p className="text-sm opacity-40">Faça o upload das imagens que serão utilizadas nas cartas do jogo da memória (Máximo 6 imagens)</p>
+                    </div>
+                    <div className="w-[80%] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+                        <Archive />
+                        <Archive />
+                        <Archive />
+                        <Archive />
+                        <Archive />
+                        <Archive />
+                    </div>
+                </div>
+                <ul className="text-sm grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <li>
+                        5. Cor da fonte: <strong>Título</strong>
+                        <ColorTable />
+                    </li>
+                    <li>
+                        6. Cor da fonte: <strong>Vitória</strong>
+                        <ColorTable />
+                    </li>
+                    <li>
+                        7. Cor da fonte: <strong>Derrota</strong>
+                        <ColorTable />
+                    </li>
+                </ul>
             </div>
             <div className="w-full p-16 flex justify-between">
-                <Link href="/perfil/newgame/config">
+                <Link href="/perfil/newgame/design">
                     <Button variant={'roxo'} className="rounded-full" size={"lg"}>VOLTAR</Button>
                 </Link>
-                <Link href="/perfil/newgame/design-2">
+                <Link href="/perfil/newgame/songs">
                     <Button variant={'verde'} className="rounded-full" size={"lg"}>AVANÇAR</Button>
                 </Link>
             </div>

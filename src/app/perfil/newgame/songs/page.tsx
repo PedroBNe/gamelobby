@@ -91,7 +91,7 @@ export default function Page() {
                </div>
             </div>
             <div className="w-full p-16 flex justify-between">
-                <Link href="/perfil/newgame/design">
+                <Link href="/perfil/newgame/design-2">
                     <Button variant={'roxo'} className="rounded-full" size={"lg"}>VOLTAR</Button>
                 </Link>
                 <Link href="/perfil/newgame/test">
