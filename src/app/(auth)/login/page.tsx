@@ -58,13 +58,13 @@ export default function Login() {
                         <Checkbox className="data-[state=checked]:bg-[#7A6EFF] data-[state=checked]:text-white" />
                         Salvar Login
                     </div>
-                    <div className="text-[#7A6EFF]">Esqueci a senha</div>
+                    <div className="text-[#7A6EFF] cursor-pointer hover:text-opacity-70 transition" onClick={() => router.push('/rec-account')}>Esqueci a senha</div>
                 </div>
                 <Button variant={'verde'} className="text-white h-[50px] shadow-2xl" size={"lg"}>ENTRAR</Button>
             </form>
             <div className="flex gap-2">
                 Não tem uma conta?
-                <div className="text-[#7A6EFF]" onClick={() => router.push('/register')}>Cadastre-se</div>
+                <div className="text-[#7A6EFF] cursor-pointer hover:text-opacity-70 transition" onClick={() => router.push('/register')}>Cadastre-se</div>
             </div>
             <div className="flex flex-col gap-4 items-center text-2xl font-semibold">
                 ENTRAR COM
