@@ -6,10 +6,11 @@ import Google from "@/assets/google";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
+import Link from "next/link";
 
 export default function Login() {
     return(
-        <div className="w-[70%] h-auto flex flex-col items-center gap-8">
+        <div className="w-[70%] min-h-[40em] flex flex-col items-center gap-8">
             <h2 className="text-4xl font-bold">Login</h2>
             <form className="w-[80%] flex flex-col gap-8">
                 <div>
@@ -37,17 +38,17 @@ export default function Login() {
                         <Checkbox className="data-[state=checked]:bg-[#7A6EFF] data-[state=checked]:text-white" />
                         Salvar Login
                     </div>
-                    <div className="text-[#7A6EFF]">
+                    <Link href="/login/rec-account" className="text-[#7A6EFF]">
                         Esqueci a senha
-                    </div>
+                    </Link>
                 </div>
                 <Button variant={'verde'} className="text-white h-[50px] shadow-2xl" size={"lg"}>ENTRAR</Button>
             </form>
             <div className="flex gap-2">
                 Não tem uma conta? 
-                <div className="text-[#7A6EFF]">
+                <Link href="/login/register" className="text-[#7A6EFF] hover:opacity-70 transition">
                     Cadastre-se
-                </div>
+                </Link>
             </div>
             <div className="flex flex-col gap-4 items-center text-2xl font-semibold">
                 ENTRAR COM
