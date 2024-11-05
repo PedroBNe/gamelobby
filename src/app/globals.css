@@ -1,12 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 body {
   background-color: #7A6EFF;
   color: black;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.Jaro {
+  font-family: "Jaro", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 @layer base {
   :root {

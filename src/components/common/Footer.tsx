@@ -8,7 +8,7 @@ import Whats from "@/assets/whats";
 export default function Footer() {
     return(
         <footer className="w-full py-3 px-16 text-white flex justify-between items-center gap-10">
-            <div className="font-bold text-xl">
+            <div className="font-bold text-xl Jaro">
                 <p>Game</p>
                 <p>Lobby</p>
             </div>

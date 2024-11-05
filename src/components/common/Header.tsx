@@ -13,7 +13,7 @@ import Search from "@/assets/search"
 export default function Header() {
     return(
         <header className="w-full h-[6vh] px-5 flex justify-end items-center relative">
-            <div className="flex flex-col font-bold text-2xl absolute top-3 left-3">
+            <div className={`flex flex-col font-bold text-4xl absolute top-3 left-3 Jaro`}>
                 <p>Game</p>
                 <p>Lobby</p>
             </div>
