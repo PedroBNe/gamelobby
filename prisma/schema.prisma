@@ -18,6 +18,84 @@ model User {
   name      String
   email     String   @unique
   password  String
+  games     Game[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model Game {
+  id            Int           @id @default(autoincrement())
+  gameName      String
+  logo          String?
+  icon          String?
+  background    String?
+  orientation   Orientation?
+  platform      Platform?
+  connection    Connection?
+  useLeads      Boolean       @default(false)
+  leads         String[]
+  useBrindes    Boolean
+  brindes       String[]
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  userId        Int
+  user          User          @relation(fields: [userId], references: [id])
+
+  storageItems  StorageItems[] // Correção para representar array de relacionamento
+
+  memoryGame    MemoryGame?
+  puzzleGame    PuzzleGame?
+
+  @@index([userId])
+}
+
+model MemoryGame {
+  id             Int           @id @default(autoincrement()) // Adiciona chave primária separada
+  gameId         Int           @unique
+  backgroundColor String?
+  primaryColor    String?
+  secondColor     String?
+  fontColor       String?
+  cardBack        String?
+  cardsList       String[]
+  titleColor      String?
+  vitoriaColor    String?
+  derrotaColor    String?
+  vitoriaSound    String?
+  derrotaSound    String?
+  game            Game         @relation(fields: [gameId], references: [id])
+}
+
+model StorageItems {
+  id            Int      @id @default(autoincrement()) // Adiciona chave primária separada
+  gameId        Int
+  name          String?
+  value         Int?
+  score         Int?
+  game          Game     @relation(fields: [gameId], references: [id])
+}
+
+model PuzzleGame {
+  id            Int      @id @default(autoincrement()) // Adiciona chave primária separada
+  gameId        Int      @unique
+  pieces        Int      // Número de peças no puzzle
+  difficulty    String   // Dificuldade do jogo, por exemplo, "fácil", "médio", "difícil"
+  theme         String?
+  game          Game     @relation(fields: [gameId], references: [id])
+}
+
+enum Orientation {
+  VERTICAL
+  HORIZONTAL
+}
+
+enum Platform {
+  WEB
+  ANDROID
+  WINDOWS
+}
+
+enum Connection {
+  MULTIPLAYER
+  OFFLINE
 }

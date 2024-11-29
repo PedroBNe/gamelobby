@@ -14,19 +14,29 @@ import {
 import Delete from '@/assets/delete';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { useGameContext } from '@/context/NewGameContext';
 
 export default function FormPage() {
     const [formData, setFormData] = useState<Record<string, any>>({});
     const [leadsArray, setLeadsArray] = useState<string[]>([]);
-    const [brindesArray, setBrindesArray] = useState<string[]>([]); 
+    const [brindesArray, setBrindesArray] = useState<string[]>([]);
     const [savedData, setSavedData] = useState<Record<string, any>>({});
     const [collectLeads, setCollectLeads] = useState(false);
-    const [giveBrindes, setGiveBrindes] = useState(false); 
+    const [giveBrindes, setGiveBrindes] = useState(false);
+
+    const { updateGameData } = useGameContext();
+    const [formState, setFormState] = useState({
+        orientation: "VERTICAL",
+        platform: "WEB",
+        connection: "Online",
+        useBrindes: false,
+        brindes: [] as string[]
+    });
 
     const handleDeleteBrindesItem = (brinde: string) => {
         setBrindesArray((prev) => prev.filter((item) => item !== brinde));
     };
-    
+
     const handleAddBrinde = (brinde: string) => {
         if (brinde.trim()) {
             setBrindesArray((prev) => !prev.includes(brinde) ? [...prev, brinde] : prev);
@@ -36,13 +46,13 @@ export default function FormPage() {
     const handleDeleteLeadsItem = (leads: string) => {
         setLeadsArray((prev) => prev.filter((item) => item !== leads));
     };
-        
+
     const handleSetCollectLeads = (value: string) => {
         const isCollecting = value === 'Sim';
         setCollectLeads(isCollecting);
 
         if (!isCollecting) {
-            setLeadsArray([]); 
+            setLeadsArray([]);
         }
     };
 
@@ -51,7 +61,7 @@ export default function FormPage() {
         setGiveBrindes(isGiving);
 
         if (!isGiving) {
-            setBrindesArray([]); 
+            setBrindesArray([]);
         }
     };
 
@@ -183,12 +193,12 @@ export default function FormPage() {
                                         {leadsArray.map((leads, index) => (
                                             <li key={index} className='bg-[#F3F4F6] p-2 rounded-full flex items-center gap-2'>
                                                 {leads}
-                                                <button 
-                                                onClick={(e) => {
-                                                    e.preventDefault();
-                                                    handleDeleteLeadsItem(leads);
-                                                }}
-                                                className='flex items-center justify-center rounded-full hover:bg-opacity-90 transition'>
+                                                <button
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        handleDeleteLeadsItem(leads);
+                                                    }}
+                                                    className='flex items-center justify-center rounded-full hover:bg-opacity-90 transition'>
                                                     <Delete />
                                                 </button>
                                             </li>
@@ -222,12 +232,12 @@ export default function FormPage() {
                                             {brindesArray.map((brinde, index) => (
                                                 <li key={index} className='bg-[#F3F4F6] p-2 rounded-full flex items-center gap-2'>
                                                     {brinde}
-                                                    <button 
-                                                    onClick={(e) => {
-                                                        e.preventDefault();
-                                                        handleDeleteBrindesItem(brinde);
-                                                    }}
-                                                    className='flex items-center justify-center rounded-full hover:bg-opacity-90 transition'>
+                                                    <button
+                                                        onClick={(e) => {
+                                                            e.preventDefault();
+                                                            handleDeleteBrindesItem(brinde);
+                                                        }}
+                                                        className='flex items-center justify-center rounded-full hover:bg-opacity-90 transition'>
                                                         <Delete />
                                                     </button>
                                                 </li>

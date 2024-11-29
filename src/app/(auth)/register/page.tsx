@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function Register() {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -22,7 +23,7 @@ export default function Register() {
       return;
     }
     try {
-      const response = await axios.post('/api/users/register', { email, password });
+      const response = await axios.post('/api/users/register', { name, email, password });
       console.log(response.data);
       router.push('/login');
     } catch (error) {
@@ -36,6 +37,17 @@ export default function Register() {
     <div className="w-[70%] h-auto flex flex-col items-center gap-8">
       <h2 className="text-4xl font-bold">Register</h2>
       <form className="w-[80%] flex flex-col gap-8" onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="email">Nome</label>
+          <Input
+            placeholder="Pedro"
+            id="name"
+            className="bg-slate-200"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+        </div>
         <div>
           <label htmlFor="email">E-mail</label>
           <Input
